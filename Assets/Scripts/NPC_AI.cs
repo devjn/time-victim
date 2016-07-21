@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerMovement : MonoBehaviour {
+public class NPC_AI : MonoBehaviour {
 
     public float speed = 1;
 
     Rigidbody2D rbody;
     Animator anim;
+
+    private float x = 0;
+    private float y = 1;
 
 	// Use this for initialization
 	void Start () {
@@ -16,8 +19,23 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Vector2 movement_vector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
+        if (x == 0 && y == 1)
+        {
+            y = -1;
+        }
+        else if(x == 0 && y == -1)
+        {
+            x = -1;
+            y = 0;
+        }else if (x == -1 && y == 0)
+        {
+            x = 1;
+        }else if (x == 1 && y == 0)
+        {
+            x = 0;
+            y = 1;
+        }
+        Vector2 movement_vector = new Vector2(x, y);
         if (movement_vector != Vector2.zero)
         {
             anim.SetBool("iswalking", true);

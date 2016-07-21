@@ -15,13 +15,13 @@ public class CameraFollow : MonoBehaviour
     void Start()
     {
         mycam = GetComponent<Camera>();
-        mycam.orthographicSize = (Screen.height / zoom) * 0.25f;
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        mycam.orthographicSize = (Screen.height / zoom) / 4f;
 
         if (target)
         {

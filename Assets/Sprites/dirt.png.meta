@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 9b7071cb9a7acce4e815733c23f27abd
-timeCreated: 1469114020
-licenseType: Free
+timeCreated: 1469082780
+licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
     21300000: dirt_0
@@ -44,7 +44,7 @@ TextureImporter:
   cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -3
+  textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
     filterMode: 0
@@ -75,24 +75,24 @@ TextureImporter:
         y: 160
         width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 16, y: -7}
-        - {x: 16, y: 2}
-        - {x: 14, y: 3}
-        - {x: 11, y: 3}
-        - {x: 13, y: 3}
-        - {x: 16, y: 7}
-        - {x: 16, y: 13}
-        - {x: 9, y: 16}
-        - {x: -15, y: 16}
-        - {x: -16, y: 14}
-        - {x: -16, y: -16}
-        - {x: 16, y: -16}
-        - {x: 16, y: -11}
-        - {x: 15, y: -10}
+      - - {x: 32, y: -23}
+        - {x: 32, y: -14}
+        - {x: 30, y: -13}
+        - {x: 27, y: -13}
+        - {x: 29, y: -13}
+        - {x: 32, y: -9}
+        - {x: 32, y: -3}
+        - {x: 25, y: 0}
+        - {x: 1, y: 0}
+        - {x: 0, y: -2}
+        - {x: 0, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: -27}
+        - {x: 31, y: -26}
     - name: dirt_1
       rect:
         serializedVersion: 2
