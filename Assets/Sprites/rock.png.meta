@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 9ddb0c5d49465584b87b321d7288aefc
-timeCreated: 1469085145
-licenseType: Pro
+timeCreated: 1469113914
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: rock_0
@@ -60,7 +60,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: 6, y: 16}
@@ -78,7 +78,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -15, y: -9}

@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour {
 
     public float speed = 1;
+    public float restartLevelDelay = 1f;
 
     Rigidbody2D rbody;
     Animator anim;
@@ -31,4 +32,29 @@ public class PlayerMovement : MonoBehaviour {
 
         rbody.MovePosition(rbody.position + movement_vector * Time.deltaTime * speed);
 	}
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        print("OnTriggerEnter2D: "+other);
+        if (other.tag == "Exit")
+        {
+            print("OnTrigger: exit, Restarting");
+            Invoke("Restart", restartLevelDelay);
+            enabled = false;
+        }
+        else if (other.tag == "Food")
+        {
+            //food += pointsPerFood;
+            //foodText.text = "+" + pointsPerFood + " Food: " + food;
+            //SoundManager.instance.RandomizeSfx(eatSound1, eatSound2);
+            other.gameObject.SetActive(false);
+        }
+    }
+
+    private void Restart()
+    {
+        Application.LoadLevel(Application.loadedLevel);
+    }
+
+
 }
