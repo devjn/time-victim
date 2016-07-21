@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
 
+    public float speed = 1;
+
     Rigidbody2D rbody;
     Animator anim;
 
@@ -27,6 +29,6 @@ public class PlayerMovement : MonoBehaviour {
             anim.SetBool("iswalking", false);
         }
 
-        rbody.MovePosition(rbody.position + movement_vector * Time.deltaTime);
+        rbody.MovePosition(rbody.position + movement_vector * Time.deltaTime * speed);
 	}
 }
