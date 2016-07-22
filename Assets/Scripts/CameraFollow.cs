@@ -14,8 +14,12 @@ public class CameraFollow : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+
         mycam = GetComponent<Camera>();
         mycam.orthographicSize = (Screen.height / zoom) * 0.25f;
+
+        height = Mathf.RoundToInt(Screen.height / zoom) * 0.25f + 2;
+        width = Mathf.RoundToInt(Screen.width / zoom) * 0.25f + 2;
 
     }
     private Vector2 pos;
