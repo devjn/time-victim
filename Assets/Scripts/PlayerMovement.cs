@@ -54,6 +54,10 @@ public class PlayerMovement : MonoBehaviour {
             //SoundManager.instance.RandomizeSfx(eatSound1, eatSound2);
             other.gameObject.SetActive(false);
         }
+        else if (other.tag == "Enemy")
+        {
+            LoseFood(20);
+        }
     }
 
     private void Restart()
