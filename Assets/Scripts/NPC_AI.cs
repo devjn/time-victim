@@ -14,7 +14,7 @@ public class NPC_AI : MonoBehaviour {
     public float radius = 50;
 
     public Transform target;
-    private float minDistance = 1f;
+    private float minDistance = 0f;
     private float range;
 
     // Use this for initialization
