@@ -1,10 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour {
 
+
+    public int pointsPerFood = 10;
+    public int pointsPerSoda = 20;
+
     public float speed = 1;
     public float restartLevelDelay = 1f;
+    public Text foodText;
 
     Rigidbody2D rbody;
     Animator anim;
@@ -49,8 +55,8 @@ public class PlayerMovement : MonoBehaviour {
         }
         else if (other.tag == "Food")
         {
-            //food += pointsPerFood;
-            //foodText.text = "+" + pointsPerFood + " Food: " + food;
+            food += pointsPerFood;
+            updateLivesText();
             //SoundManager.instance.RandomizeSfx(eatSound1, eatSound2);
             other.gameObject.SetActive(false);
         }
@@ -60,6 +66,11 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
+    private void updateLivesText()
+    {
+        foodText.text = "HP: " + food;
+    } 
+
     private void Restart()
     {
         Application.LoadLevel(Application.loadedLevel);
@@ -67,10 +78,11 @@ public class PlayerMovement : MonoBehaviour {
 
     public void LoseFood(int loss)
     {
+        anim.SetBool("isBlood", true);
         //animator.SetTrigger("playerHit");
         food -= loss;
         print("lives= " + food);
-        //foodText.text = "-" + loss + " Food: " + food;
+        foodText.text = "HP: " + food;
         CheckIfGameOver();
     }
 
