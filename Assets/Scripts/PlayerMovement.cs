@@ -9,11 +9,15 @@ public class PlayerMovement : MonoBehaviour {
     Rigidbody2D rbody;
     Animator anim;
 
-	// Use this for initialization
-	void Start () {
+    private int food;
+
+    // Use this for initialization
+    void Start () {
         rbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-	}
+
+        food = GameManager.instance.playerFoodPoints;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -55,6 +59,24 @@ public class PlayerMovement : MonoBehaviour {
     private void Restart()
     {
         Application.LoadLevel(Application.loadedLevel);
+    }
+
+    public void LoseFood(int loss)
+    {
+        //animator.SetTrigger("playerHit");
+        food -= loss;
+        //foodText.text = "-" + loss + " Food: " + food;
+        CheckIfGameOver();
+    }
+
+    private void CheckIfGameOver()
+    {
+        if (food <= 0)
+        {
+            //SoundManager.instance.PlaySingle(gameOverSound);
+            SoundManager.instance.musicSource.Stop();
+            GameManager.instance.GameOver();
+        }
     }
 
 
