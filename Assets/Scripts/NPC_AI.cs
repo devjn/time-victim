@@ -73,8 +73,6 @@ public class NPC_AI : MonoBehaviour {
 
         if (range > minDistance)
         {
-            Debug.Log(range);
-
             Vector2 movement_vector = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime) - rbody.position;
 
             if(movement_vector != Vector2.zero)
