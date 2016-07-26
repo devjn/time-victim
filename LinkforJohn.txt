@@ -1,1 +1,2 @@
 https://www.youtube.com/watch?v=Ra01vCUG4-o
+http://answers.unity3d.com/questions/650872/enemy-ai-movement-to-a-targetplayer-in-a-2d-game.html
