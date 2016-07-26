@@ -69,6 +69,7 @@ public class PlayerMovement : MonoBehaviour {
     {
         //animator.SetTrigger("playerHit");
         food -= loss;
+        print("lives= " + food);
         //foodText.text = "-" + loss + " Food: " + food;
         CheckIfGameOver();
     }
@@ -78,7 +79,7 @@ public class PlayerMovement : MonoBehaviour {
         if (food <= 0)
         {
             //SoundManager.instance.PlaySingle(gameOverSound);
-            SoundManager.instance.musicSource.Stop();
+            //SoundManager.instance.musicSource.Stop();
             GameManager.instance.GameOver();
         }
     }
