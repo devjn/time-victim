@@ -17,11 +17,16 @@ public class CameraFollow : MonoBehaviour
     public static bool followTarget = true;
 
     // Use this for initialization
+
+        
+
     void Start()
     {
-
         mycam = GetComponent<Camera>();
         mycam.orthographicSize = (Screen.height / zoom) * 0.25f;
+
+        levelPixelHeight = GameManager.instance.boardScript.rows;
+        levelPixelWidth = GameManager.instance.boardScript.columns;
 
         height = Mathf.RoundToInt(Screen.height / zoom) * 0.25f ;
         width = Mathf.RoundToInt(Screen.width / zoom) * 0.25f ;
@@ -35,15 +40,29 @@ public class CameraFollow : MonoBehaviour
         levelPixelHeight -= Mathf.RoundToInt(correctionY + 1f);
         levelPixelWidth -= Mathf.RoundToInt(correctionX + 0.5f);
 
+        //StartCoroutine(LateStart());
+
     }
+
+
+    IEnumerator LateStart()
+    {
+        yield return new WaitForFixedUpdate();
+        yield return new WaitForSeconds(2);
+        levelPixelHeight = GameManager.instance.boardScript.columns;
+        levelPixelWidth = GameManager.instance.boardScript.rows;
+    }
+
+
+
     private Vector2 pos;
     private Vector3 depth = new Vector3(0, 0, -10f);
     private float height = 6;
     private float width = 8;
     public int FreeCameraSpeed = 15;
 
-    public int levelPixelHeight;
-    public int levelPixelWidth;
+    private int levelPixelHeight;
+    private int levelPixelWidth;
     // Update is called once per frame
     void Update()
     {
@@ -95,7 +114,18 @@ public class CameraFollow : MonoBehaviour
             }
 
         }
-        
+
+        if (Input.GetKeyDown(KeyCode.Comma))
+        {
+            zoom -= 1f;
+            mycam.orthographicSize = (Screen.height / zoom) * 0.25f;
+        } else if (Input.GetKeyDown(KeyCode.Period))
+        {
+            zoom += 1f;
+            mycam.orthographicSize = (Screen.height / zoom) * 0.25f;
+        }
+
+
     }
 
     private Transform exTarget;

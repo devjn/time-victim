@@ -21,6 +21,7 @@ public class NPC_AI : MonoBehaviour {
     void Start () {
         rbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        target = PlayerMovement.instance.GetComponent<Rigidbody2D>().transform;
     }
 
     void Update()

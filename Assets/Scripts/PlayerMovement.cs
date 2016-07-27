@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour {
 
+    public static PlayerMovement instance = null;
 
     public int pointsPerFood = 10;
     public int pointsPerSoda = 20;
@@ -23,6 +24,14 @@ public class PlayerMovement : MonoBehaviour {
         anim = GetComponent<Animator>();
 
         food = GameManager.instance.playerFoodPoints;
+    }
+
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
     }
 	
 	// Update is called once per frame
