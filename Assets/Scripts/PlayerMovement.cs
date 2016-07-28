@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour {
     public float restartLevelDelay = 1f;
     public Text foodText;
 
+    public Image foodBar;
+
     Rigidbody2D rbody;
     Animator anim;
 
@@ -78,6 +80,8 @@ public class PlayerMovement : MonoBehaviour {
     private void updateLivesText()
     {
         foodText.text = "HP: " + food;
+        foodBar.transform.localScale = new Vector2(Mathf.Clamp((float)food / 100F, 0, 1), 1F);
+
     } 
 
     private void Restart()
@@ -92,6 +96,7 @@ public class PlayerMovement : MonoBehaviour {
         food -= loss;
         print("lives= " + food);
         foodText.text = "HP: " + food;
+        foodBar.transform.localScale = new Vector2(Mathf.Clamp((float)food / 100F, 0, 1), 1F);
         CheckIfGameOver();
     }
 
