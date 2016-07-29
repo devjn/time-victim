@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour {
 
     public Image foodBar;
 
+    private bool LoseHP = false;
+
     Rigidbody2D rbody;
     Animator anim;
 
@@ -55,6 +57,21 @@ public class PlayerMovement : MonoBehaviour {
         rbody.MovePosition(rbody.position + movement_vector * Time.deltaTime * speed);
 	}
 
+    private int c = 0;
+
+    private void FixedUpdate()
+    {
+        if (LoseHP)
+        {
+            if (c > 50)
+            {
+                LoseFood(20);
+                c = 0;
+            }
+            c++;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         print("OnTriggerEnter2D: "+other);
@@ -74,7 +91,14 @@ public class PlayerMovement : MonoBehaviour {
         else if (other.tag == "Enemy")
         {
             LoseFood(20);
+            LoseHP = true;
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        print("OnTriggerExited2D: " + other);
+        LoseHP = false;
     }
 
     private void updateLivesText()
