@@ -75,7 +75,8 @@ public class GameManager : MonoBehaviour {
 		levelText.text = "Your are dead at the level " + level + ".";
 		levelImage.SetActive (true);
 		enabled = false;
-	}
+        pauseGame();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -106,4 +107,14 @@ public class GameManager : MonoBehaviour {
 		playersTurn = true;
 		enemiesMoving = false;
 	}
+
+    public static void pauseGame()
+    {
+        Time.timeScale = 0;
+    }
+
+    public static void resumeGame()
+    {
+        Time.timeScale = 1f;
+    }
 }

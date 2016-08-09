@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour {
         }
         else if (other.tag == "Enemy")
         {
-            LoseFood(20);
+            LoseFood(10);
             LoseHP = true;
         }
     }
