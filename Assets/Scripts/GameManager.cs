@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
 
 	private Text levelText;
 	private GameObject levelImage;
+    private static int LevelStart = 1;
 	private int level = 1;
 	//private List<Enemy> enemies;
 	private bool enemiesMoving;
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour {
 			Destroy (gameObject);
 
 		DontDestroyOnLoad (gameObject);
+        level = LevelStart;
 		//enemies = new List<Enemy> ();
 		boardScript = GetComponent<BoardManager> ();
 		InitGame ();
@@ -41,7 +43,12 @@ public class GameManager : MonoBehaviour {
     public void setLevel(int num)
     {
         this.level = num;
-    } 
+    }
+
+    public static void setStartLevel(int num)
+    {
+        LevelStart = num;
+    }
 
     public void nextLevel()
     {
