@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
+
 public class UI_Manager : MonoBehaviour
 {
 
@@ -10,4 +11,10 @@ public class UI_Manager : MonoBehaviour
         SceneManager.LoadScene("TestScene");
         //Application.LoadLevel("1_game");
     }
+    public void LoadLevel(int level)
+    {
+        SceneManager.LoadScene("TestScene");
+        GameManager.setStartLevel(level);
+    }
+
 }
