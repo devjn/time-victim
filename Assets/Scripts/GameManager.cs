@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour {
 
 	private Text levelText;
 	private GameObject levelImage;
-	private int level = 0;
+	private int level = 1;
 	//private List<Enemy> enemies;
 	private bool enemiesMoving;
 	private bool doingSetup;
@@ -35,22 +35,24 @@ public class GameManager : MonoBehaviour {
 
 	void OnLevelWasLoaded (int index)
 	{
-		level++;
-
 		InitGame ();
 	}
+
+    public void setLevel(int num)
+    {
+        this.level = num;
+    } 
+
+    public void nextLevel()
+    {
+        this.level = level + 1;
+    }
 
     bool hack = false;
 
 	void InitGame()
 	{
 		doingSetup = true;
-
-        if (level == 3 && !hack)
-        {
-            hack = true;
-            level = 2;
-        }
 
 		levelImage = GameObject.Find ("LevelImage");
 		levelText = GameObject.Find ("LevelText").GetComponent<Text> ();

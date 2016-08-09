@@ -77,9 +77,12 @@ public class PlayerMovement : MonoBehaviour {
         print("OnTriggerEnter2D: "+other);
         if (other.tag == "Exit")
         {
+            if (!enabled) return;
             print("OnTrigger: exit, Restarting");
+            GameManager.instance.nextLevel();
             Invoke("Restart", restartLevelDelay);
             enabled = false;
+            //gameObject.SetActive(false);
         }
         else if (other.tag == "Food")
         {
