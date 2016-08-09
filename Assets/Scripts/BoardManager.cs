@@ -105,7 +105,7 @@ public class BoardManager : MonoBehaviour
 		for (int i = 0; i < objectCount; i++) {
 			Vector3 randomPosition = RandomPosition ();
             int choise = Random.Range(0, tileArray.Length);
-            if (choise <= 0) continue;
+            if (tileArray.Length <= 0) continue;
             //print("tileArray size= " + tileArray.Length + " choise= "+ choise);
 			GameObject tileChoice = tileArray [choise];
 			Instantiate (tileChoice, randomPosition, Quaternion.identity);
@@ -119,7 +119,7 @@ public class BoardManager : MonoBehaviour
 		LayoutObjectAtRandom (wallTiles, wallCount.minimum, wallCount.maximum);
 		LayoutObjectAtRandom (foodTiles, foodCount.minimum, foodCount.maximum);
         LayoutObjectAtRandom(trees, treeCount.minimum, treeCount.maximum);
-        int enemyCount = (int)Mathf.Log (level, 2f) + 3;
+        int enemyCount = (int)Mathf.Log (level, 2f) + 1;
 		LayoutObjectAtRandom (enemyTiles, enemyCount, enemyCount + 5);
 		Instantiate (exit, new Vector3 (columns - 1, rows - 1, 0F), Quaternion.identity);
 	}

@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour {
 
     public void nextLevel()
     {
-        this.level = level + 1;
+        this.level++;
     }
 
     bool hack = false;
