@@ -125,6 +125,14 @@ public class CameraFollow : MonoBehaviour
             mycam.orthographicSize = (Screen.height / zoom) * 0.25f;
         }
 
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (GameManager.isPaused())
+                GameManager.resumeGame();
+            else
+                GameManager.pauseGame();
+        }
+
 
     }
 
