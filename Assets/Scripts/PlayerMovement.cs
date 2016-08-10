@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -14,6 +15,9 @@ public class PlayerMovement : MonoBehaviour {
     public Text foodText;
 
     public Image foodBar;
+
+    public AudioClip gameOverSound;
+    public AudioClip[] hits;
 
     private bool LoseHP = false;
 
@@ -79,7 +83,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             if (!enabled) return;
             print("OnTrigger: exit, Restarting");
-            GameManager.instance.nextLevel();
+            GameManager.instance.nextLevel(food);
             Invoke("Restart", restartLevelDelay);
             enabled = false;
             //gameObject.SetActive(false);
@@ -95,6 +99,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             LoseFood(10);
             LoseHP = true;
+
         }
     }
 
@@ -113,11 +118,12 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Restart()
     {
-        Application.LoadLevel(Application.loadedLevel);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void LoseFood(int loss)
     {
+        SoundManager.instance.RandomizeSfx(hits);
         anim.SetBool("isBlood", true);
         //animator.SetTrigger("playerHit");
         food -= loss;
@@ -131,8 +137,8 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (food <= 0)
         {
-            //SoundManager.instance.PlaySingle(gameOverSound);
-            //SoundManager.instance.musicSource.Stop();
+            SoundManager.instance.PlaySingle(gameOverSound);
+            SoundManager.instance.musicSource.Stop();
             GameManager.instance.GameOver();
         }
     }

@@ -10,12 +10,13 @@ public class GameManager : MonoBehaviour {
 	public float turnDelay = .1f;
 	public static GameManager instance = null;
 	public BoardManager boardScript;
-	public int playerFoodPoints = 100;
+	public int playerFoodPoints = health;
 	[HideInInspector] public bool playersTurn = true;
 
 	private Text levelText;
 	private GameObject levelImage;
     private static int LevelStart = 1;
+    private static int health = 100;
 	private int level = 1;
 	//private List<Enemy> enemies;
 	private bool enemiesMoving;
@@ -50,8 +51,9 @@ public class GameManager : MonoBehaviour {
         LevelStart = num;
     }
 
-    public void nextLevel()
+    public void nextLevel(int healthLeft)
     {
+        health = healthLeft;
         this.level++;
     }
 

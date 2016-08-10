@@ -19,13 +19,17 @@ public class SoundManager : MonoBehaviour
         else if (instance != this)
             Destroy(gameObject);
 
-        DontDestroyOnLoad(gameObject);
+ //       if (!(musicEnabled) && (musicSource != null))
+  //          musicSource.enabled = false;
+            
+
+        //DontDestroyOnLoad(gameObject);
     }
 
     public void PlaySingle(AudioClip clip)
     {
         efxSource.clip = clip;
-        efxSource.Play();
+        if(musicEnabled) efxSource.Play();
     }
 
     public void RandomizeSfx(params AudioClip[] clips)
@@ -35,7 +39,14 @@ public class SoundManager : MonoBehaviour
 
         efxSource.pitch = randomPitch;
         efxSource.clip = clips[randomIndex];
-        efxSource.Play();
+        if(musicEnabled) efxSource.Play();
+    }
+
+    private static bool musicEnabled = true;
+
+    public void setEnabledMusic(bool enabled)
+    {
+        musicEnabled = enabled;
     }
 }
 
