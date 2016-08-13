@@ -2,69 +2,25 @@ Initialize engine version: 5.3.5f1 (960ebf59018a)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce GTX 660   (ID=0x11c0)
-    Vendor:   NVIDIA
-    VRAM:     1988 MB
+    Renderer: AMD Radeon(TM) R7 Graphics (ID=0x1313)
+    Vendor:   ATI
+    VRAM:     1006 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: E:\time-victim\TimeVictim_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading E:\time-victim\TimeVictim_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: E:\time-victim\TimeVictim_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading E:\time-victim\TimeVictim_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: E:\time-victim\TimeVictim_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading E:\time-victim\TimeVictim_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: E:\time-victim\TimeVictim_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading E:\time-victim\TimeVictim_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.044 seconds
-Platform assembly: E:\time-victim\TimeVictim_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: E:\time-victim\TimeVictim_Data\Managed\System.dll (this message is harmless)
-desktop: 1360x768 60Hz; virtual: 1360x768 at 0,0
+Platform assembly: E:\Development\Unity\Projects\time-victim\TimeVictim_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading E:\Development\Unity\Projects\time-victim\TimeVictim_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: E:\Development\Unity\Projects\time-victim\TimeVictim_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading E:\Development\Unity\Projects\time-victim\TimeVictim_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: E:\Development\Unity\Projects\time-victim\TimeVictim_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading E:\Development\Unity\Projects\time-victim\TimeVictim_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: E:\Development\Unity\Projects\time-victim\TimeVictim_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading E:\Development\Unity\Projects\time-victim\TimeVictim_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.058 seconds
+Platform assembly: E:\Development\Unity\Projects\time-victim\TimeVictim_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: E:\Development\Unity\Projects\time-victim\TimeVictim_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1200 60Hz; virtual: 1920x1200 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.483516 ms
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.591967 ms
-
-Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 11476.
-Total: 1.878706 ms (FindLiveObjects: 0.379837 ms CreateObjectMapping: 0.152958 ms MarkObjects: 1.326390 ms  DeleteObjects: 0.018879 ms)
-
-correctionX= 3.515625
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-correctionY= 2.03125
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-Unloading the last scene Assets/Scenes/TestScene.unity(build index: 1), is not supported. Please use SceneManager.LoadScene()/EditorSceneManager.OpenScene() to switch to another scene.
- 
-(Filename:  Line: 127)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.208297 ms
-NullReferenceException: Object reference not set to an instance of an object
-  at GameManager.InitGame () [0x00000] in <filename unknown>:0 
-  at GameManager.OnLevelWasLoaded (Int32 index) [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 509.
-Total: 0.305277 ms (FindLiveObjects: 0.029119 ms CreateObjectMapping: 0.014079 ms MarkObjects: 0.253758 ms  DeleteObjects: 0.007999 ms)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.384637 ms
-
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 6005.
-Total: 0.964153 ms (FindLiveObjects: 0.199358 ms CreateObjectMapping: 0.056639 ms MarkObjects: 0.694395 ms  DeleteObjects: 0.013439 ms)
-
-correctionX= 3.515625
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-correctionY= 2.03125
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
+UnloadTime: 0.843854 ms
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 1c9c -> priority: 1 
+  Thread -> id: 22cc -> priority: 1 
