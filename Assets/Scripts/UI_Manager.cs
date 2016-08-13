@@ -8,19 +8,25 @@ public class UI_Manager : MonoBehaviour
 
     public void StartGame()
     {
+        resumeGame();
+        GameManager.setStartLevel(1);
         SceneManager.LoadScene("TestScene");
         //Application.LoadLevel("1_game");
     }
 
     public void LoadLevel(int level)
     {
+        resumeGame();
         SceneManager.LoadScene("TestScene");
         GameManager.setStartLevel(level);
     }
 
     public void LoadMenu()
     {
-        SceneManager.UnloadScene(SceneManager.GetActiveScene().buildIndex);
+        resumeGame();
+        Destroy(GameManager.instance);
+        GameManager.setStartLevel(1);
+        //SceneManager.UnloadScene(SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene("Intro");
     }
 

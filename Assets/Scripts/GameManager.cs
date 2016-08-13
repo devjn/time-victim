@@ -57,8 +57,6 @@ public class GameManager : MonoBehaviour {
         this.level++;
     }
 
-    bool hack = false;
-
 	void InitGame()
 	{
 		doingSetup = true;

@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public AudioClip gameOverSound;
     public AudioClip[] hits;
+    public AudioClip[] eatSound;
 
     private bool LoseHP = false;
 
@@ -92,7 +93,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             food += pointsPerFood;
             updateLivesText();
-            //SoundManager.instance.RandomizeSfx(eatSound1, eatSound2);
+            SoundManager.instance.RandomizeSfx(eatSound);
             other.gameObject.SetActive(false);
         }
         else if (other.tag == "Enemy")
